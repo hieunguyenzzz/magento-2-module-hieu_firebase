@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Hieu\Firebase\Model\JobInterface" type="Hieu\Firebase\Model\Job" />
+    <preference for="Hieu\Firebase\Model\AdapterInterface" type="Hieu\Firebase\Model\Adapter" />
+
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="firestore_sync" xsi:type="object">Hieu\Firebase\Console\Command\FireStore</item>
+            </argument>
+        </arguments>
+    </type>
+
+
+    <type name="Hieu\Firebase\Model\Job">
+        <arguments>
+            <argument name="entities" xsi:type="array">
+                <item name="product" xsi:type="object">Hieu\Firebase\Model\Entity\Product</item>
+                <item name="attribute" xsi:type="object">Hieu\Firebase\Model\Entity\Attribute</item>
+                <item name="attribute_option" xsi:type="object">Hieu\Firebase\Model\Entity\AttributeOption</item>
+            </argument>
+        </arguments>
+    </type>
+
+</config>
