@@ -59,7 +59,6 @@ class Product implements EntityInterface
     public function getItems()
     {
         $searchCriteria = $this->searchCriteriaBuilder
-            ->addFilter('visibility', 4)
             ->addFilter('status', 1)
             ->create();
 

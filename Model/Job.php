@@ -60,13 +60,11 @@ class Job implements JobInterface
 
         foreach ($this->entities as $entityName => $entity) {
             foreach ($entity->getItems() as $id => $data) {
-                echo "$id" . "\n";
                 $ref = $database->collection($entityName)->document($id);
                 $batch->set($ref, $data);
 
                 if ($i++ >= 100) {
                     $i = 1;
-                    echo "commit \n";
                     $batch->commit();
                 }
             }
