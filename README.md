@@ -9,3 +9,7 @@ change log:
 bin/magento firestore:sync
 
 only simple product are support to upload into firestore at this version
+
+2. server side authentication:
+
+export GOOGLE_APPLICATION_CREDENTIALS=/path/to/json
